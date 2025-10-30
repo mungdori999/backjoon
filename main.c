@@ -1,10 +1,17 @@
 #include <stdio.h>
 
 int main(void) {
-    printf("|\\_/|\n");
-    printf("|q p|   /}\n");
-    printf("( 0 )\"\"\"\\\n");
-    printf("|\"^\"`    |\n");
-    printf("||_/=\\\\__|\n");
+    int a, b = 0;
+    scanf("%d %d", &a, &b);
+
+
+    if (a > b) {
+        printf(">");
+    } else if (a < b) {
+        printf("<");
+    } else {
+        printf("==");
+    }
+
     return 0;
 }
