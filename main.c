@@ -1,12 +1,8 @@
 #include <stdio.h>
 
-int main() {
-
-    char *name;
-
-    scanf("%s", name);
-
-    printf("%s??!", name);
-
+int main(void) {
+    char id[50];
+    scanf("%s", id);
+    printf("%s?\?!", id);
     return 0;
 }
