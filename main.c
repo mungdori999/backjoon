@@ -1,13 +1,15 @@
 #include <stdio.h>
 
 int main(void) {
-    int year = 0;
+    int a, b, c = 0;
 
-    scanf("%d", &year);
+    scanf("%d %d %d", &a, &b, &c);
 
-    int new = 543;
+    printf("%d\n",(a+b)%c);
+    printf("%d\n",((a%c)+(b%c))%c);
+    printf("%d\n",(a*b)%c);
+    printf("%d\n",((a%c)*(b%c))%c);
 
-    printf("%d", year - new);
 
     return 0;
 }
