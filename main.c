@@ -5,18 +5,10 @@ int main(void) {
     scanf("%d", &a);
 
 
-    if (a >= 90 && a <= 100) {
-        printf("A");
-    } else if (a>=80 && a <90) {
-        printf("B");
-    }
-    else if (a>=70 && a <80) {
-        printf("C");
-    }
-    else if (a>=60 && a <70) {
-        printf("D");
-    } else {
-        printf("F");
+    if (a % 4 == 0 && ((a % 100 != 0) || (a % 400 == 0))) {
+        printf("1");
+    } else{
+        printf("0");
     }
 
     return 0;
