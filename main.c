@@ -2,19 +2,19 @@
 
 int main(void) {
     int a, b = 0;
-    scanf("%d", &a);
-    scanf("%d", &b);
+    scanf("%d %d", &a, &b);
 
+    b = b - 45;
 
-    if (a > 0 && b > 0) {
-        printf("1");
-    } else if (a < 0 && b > 0) {
-        printf("2");
-    } else if (a < 0 && b < 0) {
-        printf("3");
-    } else {
-        printf("4");
+    if (b < 0) {
+        a--;
+        if (a < 0) {
+            a = 24 + a;
+        }
+        b = 60 + b;
     }
+
+    printf("%d %d", a, b);
 
     return 0;
 }
