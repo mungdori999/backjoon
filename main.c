@@ -1,8 +1,13 @@
 #include <stdio.h>
 
 int main(void) {
-    char id[50];
-    scanf("%s", id);
-    printf("%s?\?!", id);
+    int year = 0;
+
+    scanf("%d", &year);
+
+    int new = 543;
+
+    printf("%d", year - new);
+
     return 0;
 }
