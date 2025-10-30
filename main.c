@@ -2,19 +2,20 @@
 
 int main(void) {
     int a, b = 0;
+    int term = 0;
     scanf("%d %d", &a, &b);
+    scanf("%d", &term);
 
-    b = b - 45;
+    b = b + term;
+    int limit = b / 60;
 
-    if (b < 0) {
-        a--;
-        if (a < 0) {
-            a = 24 + a;
+    if (limit > 0) {
+        a += limit;
+        b -= (limit * 60);
+        if (a >= 24) {
+            a -= 24;
         }
-        b = 60 + b;
     }
-
     printf("%d %d", a, b);
-
     return 0;
 }
