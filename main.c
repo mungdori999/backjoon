@@ -1,12 +1,10 @@
 #include <stdio.h>
 
 int main(void) {
-    long a, b, c;
-
-    scanf("%ld %ld %ld", &a, &b, &c);
-
-    printf("%ld", a + b + c);
-
-
+    printf("|\\_/|\n");
+    printf("|q p|   /}\n");
+    printf("( 0 )\"\"\"\\\n");
+    printf("|\"^\"`    |\n");
+    printf("||_/=\\\\__|\n");
     return 0;
 }
