@@ -1,14 +1,19 @@
 #include <stdio.h>
 
 int main(void) {
-    int a = 0;
+    int a, b = 0;
     scanf("%d", &a);
+    scanf("%d", &b);
 
 
-    if (a % 4 == 0 && ((a % 100 != 0) || (a % 400 == 0))) {
+    if (a > 0 && b > 0) {
         printf("1");
-    } else{
-        printf("0");
+    } else if (a < 0 && b > 0) {
+        printf("2");
+    } else if (a < 0 && b < 0) {
+        printf("3");
+    } else {
+        printf("4");
     }
 
     return 0;
