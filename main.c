@@ -10,7 +10,7 @@ int main(void) {
         int a, b = 0;
         scanf("%d %d", &a, &b);
 
-        printf("Case #%d: %d\n", i, a + b);
+        printf("Case #%d: %d + %d = %d\n", i, a, b, a + b);
     }
 
 
