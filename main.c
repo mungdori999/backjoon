@@ -3,27 +3,22 @@
 
 int main(void) {
 
-    int n = 0;
-    scanf("%d", &n);
+    int n, x = 0;
+    scanf("%d %d", &n, &x);
 
     int arr[n];
-
     memset(arr, 0, sizeof(arr));
 
     for (int i = 0; i < n; ++i) {
-        int a = 0;
-        scanf("%d ", &a);
-        arr[i] = a;
-    }
-    int target, count = 0;
+        scanf("%d", &arr[i]);
 
-    scanf("%d", &target);
+    }
+    int target[n];
+    memset(target, 0, sizeof(target));
 
     for (int i = 0; i < n; ++i) {
-        if (arr[i] == target) count++;
+        if (arr[i] < x) printf("%d ", arr[i]);
     }
-
-    printf("%d",count);
 
 
     return 0;
