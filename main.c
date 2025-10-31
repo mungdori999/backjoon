@@ -6,11 +6,12 @@ int main(void) {
 
     scanf("%d", &n);
 
-    for (int i = 0; i < (n / 4); i++) {
-        printf("long ");
-    }
-    printf("int");
+    for (int i = 1; i <= n; i++) {
+        int a, b = 0;
+        scanf("%d %d", &a, &b);
 
+        printf("Case #%d: %d\n", i, a + b);
+    }
 
 
     return 0;
