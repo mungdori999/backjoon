@@ -1,30 +1,26 @@
 #include <stdio.h>
-#include <string.h>
-
 
 int main(void) {
 
-    int n, m;
-    scanf("%d %d", &n, &m);
-    int basket[n + 1];
+    int n;
+    scanf("%d", &n);
 
-    for (int i = 1; i <= n; ++i) {
-        basket[i] = i;
+    float avg = 0;
+    float max = 0;
+    float sub[n];
+
+    for (int i = 0; i < n; ++i) {
+        scanf("%f", &sub[i]);
+        if (sub[i] >= max) max = sub[i];
     }
 
-    for (int i = 1; i <= m; ++i) {
-        int a, b;
-        scanf("%d %d", &a, &b);
+    for (int i = 0; i < n; ++i) {
+        sub[i] = sub[i] / max * 100;
+        avg += sub[i];
+    }
 
-        for (int j = 0; j < ((b - a + 1) / 2); ++j) {
-            int temp = basket[a + j];
-            basket[a + j] = basket[b - j];
-            basket[b - j] = temp;
-        }
-    }
-    for (int i = 1; i <= n; ++i) {
-        printf("%d ", basket[i]);
-    }
+    printf("%f", avg / n);
+
 
     return 0;
 }
