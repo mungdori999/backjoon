@@ -2,13 +2,15 @@
 
 int main(void) {
 
-    int a = 0;
+    int repeat = 0;
 
-    scanf("%d", &a);
+    scanf("%d", &repeat);
 
-    for (int i = 1; i < 10; i++) {
-        printf("%d * %d = %d\n", a, i, a * i);
+    for (int i = 0; i < repeat; i++) {
+        int a, b = 0;
+
+        scanf("%d %d", &a, &b);
+        printf("%d\n", a + b);
     }
-
     return 0;
 }
