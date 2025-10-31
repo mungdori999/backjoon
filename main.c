@@ -4,31 +4,27 @@
 
 int main(void) {
 
-    int arr[10] = {0,};
+    int n, m;
+    scanf("%d %d", &n, &m);
+    int basket[n + 1];
 
-    for (int i = 0; i < 10; ++i) {
-        int num;
-        scanf("%d", &num);
-
-        arr[i] = num % 42;
+    for (int i = 1; i <= n; ++i) {
+        basket[i] = i;
     }
-    for (int i = 0; i < 10; ++i) {
-        for (int j = 0; j < 9 - i; ++j) {
-            if (arr[j] >= arr[j + 1]) {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
+
+    for (int i = 1; i <= m; ++i) {
+        int a, b;
+        scanf("%d %d", &a, &b);
+
+        for (int j = 0; j < ((b - a + 1) / 2); ++j) {
+            int temp = basket[a + j];
+            basket[a + j] = basket[b - j];
+            basket[b - j] = temp;
         }
     }
-
-    int count = 1;
-
-    for (int i = 0; i < 9; ++i) {
-        if (arr[i] != arr[i + 1]) {
-            count++;
-        }
+    for (int i = 1; i <= n; ++i) {
+        printf("%d ", basket[i]);
     }
-    printf("%d",count);
+
     return 0;
 }
