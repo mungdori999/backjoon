@@ -1,28 +1,21 @@
 #include <stdio.h>
-#include <string.h>
 
 int main(void) {
 
-    int n = 0;
-    scanf("%d", &n);
+    int max = 0;
+    int line = 0;
 
-    long arr[n];
-    memset(arr, 0, sizeof(arr));
+    for (int i = 0; i < 9; ++i) {
+        int num = 0;
+        scanf("%d", &num);
 
-
-
-    for (int i = 0; i < n; ++i) {
-        scanf("%ld", &arr[i]);
+        if (max <= num) {
+            max = num;
+            line = i+1;
+        }
     }
 
-    long max = arr[0];
-    long min = arr[0];
+    printf("%d\n%d", max,line);
 
-    for (int i = 0; i < n; ++i) {
-        if (arr[i] >= max) max = arr[i];
-        if (arr[i] <= min) min = arr[i];
-    }
-
-    printf("%ld %ld", min, max);
     return 0;
 }
