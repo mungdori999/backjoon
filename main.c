@@ -14,18 +14,11 @@ int main(void) {
         student[x] = 1;
     }
 
-    int num[2];
-    int counter = 0;
     for (int i = 1; i <= 30; ++i) {
         if (student[i] == 0) {
-            num[counter] = i;
-            counter++;
+            printf("%d\n", i);
         }
 
-    }
-    if (num[0] > num[1]) { printf("%d\n%d", num[1], num[0]); }
-    else {
-        printf("%d\n%d", num[0], num[1]);
     }
     return 0;
 }
