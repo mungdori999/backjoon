@@ -2,18 +2,12 @@
 
 int main(void) {
 
-    int n = 0;
+    int a, b = 0;
 
-    scanf("%d", &n);
-
-    for (int i = 1; i <= n; i++) {
-        for (int j = n; j > i; j--) {
-            printf(" ");
-        }
-        for (int k = 0; k < i; ++k) {
-            printf("*");
-        }
-        printf("\n");
+    while (1) {
+        scanf("%d %d", &a, &b);
+        if (a == 0 && b == 0) break;
+        printf("%d\n", a + b);
     }
 
 
