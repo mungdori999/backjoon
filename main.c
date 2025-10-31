@@ -1,28 +1,31 @@
 #include <stdio.h>
 #include <string.h>
 
+
 int main(void) {
 
-    int n, m;
+    int student[31];
 
-    scanf("%d %d", &n, &m);
+    memset(student, 0, sizeof(student));
 
-    int arr[n];
-    memset(arr,0,sizeof(arr));
+    for (int i = 1; i <= 28; ++i) {
+        int x = 0;
+        scanf("%d", &x);
+        student[x] = 1;
+    }
 
-    for (int r = 0; r < m; ++r) {
-        int i, j, k;
-        scanf("%d %d %d", &i, &j, &k);
-
-        for (int l = i - 1; l < j; ++l) {
-            arr[l] = k;
+    int num[2];
+    int counter = 0;
+    for (int i = 1; i <= 30; ++i) {
+        if (student[i] == 0) {
+            num[counter] = i;
+            counter++;
         }
+
     }
-
-    for (int i = 0; i < n; ++i) {
-        printf("%d ",arr[i]);
+    if (num[0] > num[1]) { printf("%d\n%d", num[1], num[0]); }
+    else {
+        printf("%d\n%d", num[0], num[1]);
     }
-
-
     return 0;
 }
