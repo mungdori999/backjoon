@@ -2,15 +2,15 @@
 
 int main(void) {
 
-    int repeat = 0;
+    int n = 0;
 
-    scanf("%d", &repeat);
+    scanf("%d", &n);
 
-    for (int i = 0; i < repeat; i++) {
-        int a, b = 0;
+    int sum = 0;
 
-        scanf("%d %d", &a, &b);
-        printf("%d\n", a + b);
+    for (int i = 1; i <= n; i++) {
+        sum += i;
     }
+    printf("%d", sum);
     return 0;
 }
