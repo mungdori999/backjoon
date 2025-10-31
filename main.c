@@ -7,10 +7,10 @@ int main(void) {
     scanf("%d", &n);
 
     for (int i = 1; i <= n; i++) {
-        int a, b = 0;
-        scanf("%d %d", &a, &b);
-
-        printf("Case #%d: %d + %d = %d\n", i, a, b, a + b);
+        for (int j = 1; j <= i; j++) {
+            printf("*");
+        }
+        printf("\n");
     }
 
 
