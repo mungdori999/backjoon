@@ -2,15 +2,25 @@
 
 int main(void) {
 
-    int n = 0;
+    int x, n = 0;
+
+    scanf("%d", &x);
 
     scanf("%d", &n);
 
     int sum = 0;
 
-    for (int i = 1; i <= n; i++) {
-        sum += i;
+    for (int i = 0; i < n; i++) {
+        int a, b = 0;
+
+        scanf("%d %d", &a, &b);
+
+        sum += (a * b);
+
     }
-    printf("%d", sum);
+
+    printf("%s", x == sum?  "Yes": "No");
+
+
     return 0;
 }
