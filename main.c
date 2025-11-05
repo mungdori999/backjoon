@@ -2,24 +2,15 @@
 
 int main(void) {
 
-    int n;
-    scanf("%d", &n);
+    char st[1000];
+    int num = 0;
 
-    float avg = 0;
-    float max = 0;
-    float sub[n];
+    scanf("%s", st);
+    scanf("%d", &num);
 
-    for (int i = 0; i < n; ++i) {
-        scanf("%f", &sub[i]);
-        if (sub[i] >= max) max = sub[i];
-    }
+    printf("%c", st[num-1]);
 
-    for (int i = 0; i < n; ++i) {
-        sub[i] = sub[i] / max * 100;
-        avg += sub[i];
-    }
 
-    printf("%f", avg / n);
 
 
     return 0;
