@@ -3,25 +3,22 @@
 
 int main(void) {
 
-    char st[101];
-    scanf("%s", st);
+    int test = 0;
+    scanf("%d", &test);
 
-    int target = 97;
-    int seq = -1;
+    for (int i = 0; i < test; ++i) {
+        int a;
+        char arr[20];
+        scanf("%d %s", &a, arr);
 
-
-    for (int i = 0; i < 26; ++i) {
-        for (int j = 0; j < strlen(st); ++j) {
-            if (st[j] == target) {
-                seq = j;
-                break;
+        for (int j = 0; j < strlen(arr); ++j) {
+            for (int k = 0; k < a; ++k) {
+                printf("%c",arr[j]);
             }
         }
-
-        printf("%d ", seq);
-        target++;
-        seq = -1;
+        printf("\n");
     }
+
 
     return 0;
 }
