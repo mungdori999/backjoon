@@ -3,16 +3,18 @@
 
 int main(void) {
 
-    char st[100];
-    int count = 0;
+    char st[1000];
+    int num = 0;
 
-    scanf("%s", st);
-    for (int i = 0; i < strlen(st); ++i) {
-        if (st[i] == '\0') break;
+    scanf("%d", &num);
 
-        count++;
+    for (int i = 0; i < num; ++i) {
+        scanf("%s", st);
+        printf("%c%c\n", st[0], st[strlen(st) - 1]);
+
+        memset(st, 0, sizeof(st));
+
     }
-    printf("%d", count);
 
     return 0;
 }
