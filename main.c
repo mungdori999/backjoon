@@ -1,17 +1,18 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void) {
 
-    char st[1000];
-    int num = 0;
+    char st[100];
+    int count = 0;
 
     scanf("%s", st);
-    scanf("%d", &num);
+    for (int i = 0; i < strlen(st); ++i) {
+        if (st[i] == '\0') break;
 
-    printf("%c", st[num-1]);
-
-
-
+        count++;
+    }
+    printf("%d", count);
 
     return 0;
 }
