@@ -1,20 +1,22 @@
 #include <stdio.h>
-#include <string.h>
+#include <tgmath.h>
 
 int main(void) {
-    char sentence[1000001];
-    fgets(sentence, sizeof(sentence), stdin);
 
-    int count = 0;
-    int len = strlen(sentence);
+    char a[4];
+    char b[4];
 
-    for (int i = 0; i < len; i++) {
-        if (sentence[i] != ' ' && (i == 0 || sentence[i - 1] == ' ') && sentence[i] != '\n') {
-            count++;
-        }
+    scanf("%3s %3s", a, b);
+
+    int sumA = 0;
+    int sumB = 0;
+
+    for (int i = 2; i >= 0; --i) {
+        int sq = pow(10, i);
+        sumA += sq * (a[i] - '0');
+        sumB += sq * (b[i] - '0');
     }
-
-    printf("%d\n", count);
+    printf("%d", sumA > sumB ? sumA : sumB);
 
     return 0;
 }
