@@ -2,23 +2,19 @@
 #include <string.h>
 
 int main(void) {
+    char sentence[1000001];
+    fgets(sentence, sizeof(sentence), stdin);
 
-    int test = 0;
-    scanf("%d", &test);
+    int count = 0;
+    int len = strlen(sentence);
 
-    for (int i = 0; i < test; ++i) {
-        int a;
-        char arr[20];
-        scanf("%d %s", &a, arr);
-
-        for (int j = 0; j < strlen(arr); ++j) {
-            for (int k = 0; k < a; ++k) {
-                printf("%c",arr[j]);
-            }
+    for (int i = 0; i < len; i++) {
+        if (sentence[i] != ' ' && (i == 0 || sentence[i - 1] == ' ') && sentence[i] != '\n') {
+            count++;
         }
-        printf("\n");
     }
 
+    printf("%d\n", count);
 
     return 0;
 }
