@@ -1,13 +1,12 @@
 #include <stdio.h>
-#include <string.h>
 
 int main(void) {
 
-    char sentence[101];
-
-    while (fgets(sentence, sizeof(sentence), stdin) != NULL) {
-        printf("%s", sentence);
-    }
-
+    printf("         ,r'\"7 \n");
+    printf("r`-_   ,'  ,/ \n");
+    printf(" \\. \". L_r' \n");
+    printf("   `~\\/ \n");
+    printf("      | \n");
+    printf("      | \n");
     return 0;
 }
