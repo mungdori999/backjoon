@@ -1,22 +1,20 @@
 #include <stdio.h>
-#include <tgmath.h>
+#include <string.h>
 
 int main(void) {
+    int time[26] = { 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 10, 10, 10, 10 };
+    char alphabet[16];
 
-    char a[4];
-    char b[4];
+    scanf("%s", alphabet);
+    int sum = 0;
 
-    scanf("%3s %3s", a, b);
+    for (int i = 0; i < strlen(alphabet); ++i) {
+        int num = alphabet[i] - 'A';
+        sum += time[num];
 
-    int sumA = 0;
-    int sumB = 0;
-
-    for (int i = 2; i >= 0; --i) {
-        int sq = pow(10, i);
-        sumA += sq * (a[i] - '0');
-        sumB += sq * (b[i] - '0');
     }
-    printf("%d", sumA > sumB ? sumA : sumB);
+    printf("%d",sum);
+
 
     return 0;
 }
