@@ -1,30 +1,21 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void) {
-    int n;
-    scanf("%d", &n);
-    int count = -1;
+    char word[101];
+    int pellin = 1;
 
-    for (int i = 0; i < (2 * n) - 1; ++i) {
-        for (int j = 0; j < (2 * n) - 1; ++j) {
+    scanf("%s", word);
 
-            if (j == ((n - 1) - i)) {
-                printf("%c", '*');
-                count++;
-                break;
-            } else if (j == (i - (n - 1))) {
-                printf("%c", '*');
-                count--;
-                break;
-            } else {
-                printf(" ");
-            }
+    for (int i = 0; i < strlen(word) / 2; ++i) {
+        if (word[i] != word[strlen(word) - 1 - i]) {
+            pellin = 0;
+            break;
+        } else {
+            pellin = 1;
         }
-        for (int j = 0; j < 2 * count; ++j) {
-            printf("%c", '*');
-        }
-        printf("\n");
     }
+    printf("%d", pellin);
 
     return 0;
 }
