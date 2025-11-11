@@ -2,34 +2,27 @@
 
 int main(void) {
 
-    int n, m;
-    scanf("%d %d", &n, &m);
+    int cross[10][10];
 
-    int arr1[n][m];
-    int arr2[n][m];
-
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < m; ++j) {
-            int a;
-            scanf("%d", &a);
-            arr1[i][j] = a;
+    for (int i = 1; i <= 9; ++i) {
+        for (int j = 1; j <= 9; ++j) {
+            scanf("%d", &cross[i][j]);
+        }
+    }
+    int max = 0;
+    int x, y;
+    for (int i = 1; i <= 9; ++i) {
+        for (int j = 1; j <= 9; ++j) {
+            if (cross[i][j] >= max) {
+                max = cross[i][j];
+                x = i;
+                y = j;
+            }
         }
     }
 
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < m; ++j) {
-            int a;
-            scanf("%d", &a);
-            arr2[i][j] = a;
-        }
-    }
-
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < m; ++j) {
-            printf("%d ",arr1[i][j]+arr2[i][j]);
-        }
-        printf("\n");
-    }
+    printf("%d\n", max);
+    printf("%d %d", x, y);
 
 
     return 0;
