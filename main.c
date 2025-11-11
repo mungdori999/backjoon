@@ -3,44 +3,52 @@
 
 int main(void) {
 
-    int n;
-    scanf("%d", &n);
+    float sumScore = 0;
+    float sumPoint = 0;
+    for (int i = 0; i < 20; ++i) {
+        char sub[51];
+        float point;
+        char rating[3];
 
-    int count = 0;
+        scanf("%s %f %s", sub, &point, rating);
 
-    for (int i = 0; i < n; ++i) {
-        char word[101];
-        scanf("%s", word);
+        if (rating[0] == 'P') continue;
 
-        int len = strlen(word);
+        sumPoint += point;
 
-        int flag = 0;
-        int check = 1;
+        if (rating[0] == 'A') {
+            if (rating[1] == '+') {
+                sumScore += (4.5f * point);
 
-        for (int j = 0; j < len; ++j) {
-            flag = 0;
-            for (int k = j + 1; k < len; ++k) {
-                if (flag == 1) {
-                    if (word[j] == word[k]) {
-                        check = 0;
-                        break;
-                    }
-                } else {
-                    if (word[j] != word[k]) {
-                        flag = 1;
-                    }
-                }
+            } else {
+                sumScore += (4.0f * point);
             }
+        } else if (rating[0] == 'B') {
+            if (rating[1] == '+') {
+                sumScore += (3.5f * point);
 
-            if (check == 0) {
-                break;
+            } else {
+                sumScore += (3.0f * point);
             }
+        } else if (rating[0] == 'C') {
+            if (rating[1] == '+') {
+                sumScore += (2.5f * point);
 
-        }
-        if (check == 1) {
-            count++;
+            } else {
+                sumScore += (2.0f * point);
+            }
+        } else if (rating[0] == 'D') {
+            if (rating[1] == '+') {
+                sumScore += (1.5f * point);
+
+            } else {
+                sumScore += (1.0f * point);
+            }
+        } else {
+            sumScore += 0.0f;
         }
     }
-    printf("%d", count);
+
+    printf("%f", sumScore / sumPoint);
     return 0;
 }
