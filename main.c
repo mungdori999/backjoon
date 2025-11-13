@@ -4,24 +4,33 @@
 
 int main(void) {
 
-    char input[100];
-    int radix;
-    int decimal = 0;
+    int decimal, radix;
 
-    scanf("%s %d", input, &radix);
+    scanf("%d %d", &decimal, &radix);
 
-    int len = strlen(input);
-    int digits = len - 1;
-    for (int i = 0; i < len; ++i) {
-        int num = 0;
-        if ((int) input[i] >= 65) num = input[i] - 'A' + 10;
-        else { num = input[i] - '0'; }
+    int quotient = decimal;
 
-        decimal += (num * pow(radix,digits));
-        digits--;
+    int remainder[200] = {0,};
+    int n = 0;
+
+    if (quotient == 0) {
+        printf("%d", 0);
+        return 0;
+    }
+    while (quotient != 0) {
+        remainder[n] = quotient % radix;
+        quotient = quotient / radix;
+        n++;
     }
 
+    char output[200];
 
-    printf("%d", decimal);
+    for (int i = 0; i < n; ++i) {
+        if (remainder[n - i - 1] >= 10) output[i] = 'A' + (remainder[n - i - 1] - 10);
+        else output[i] = remainder[n - i - 1] + '0';
+
+        printf("%c", output[i]);
+    }
+
     return 0;
 }
