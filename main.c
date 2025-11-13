@@ -3,28 +3,32 @@
 
 int main(void) {
 
-    char arr[5][16];
-    memset(arr, 0, sizeof(arr));
+    int n;
+    int coordinate[100][100];
 
-    for (int i = 0; i < 5; ++i) {
-        for (int j = 0; j < 15; ++j) {
-            char ch = getchar();
-            if (ch == '\n' || ch == EOF) break;
-            arr[i][j] = ch;
 
-            if (j == 14) {
-                while ((ch = getchar()) != '\n' && ch != EOF);
-                break;
+    memset(coordinate, 0, sizeof(coordinate));
+
+    scanf("%d", &n);
+    int area = 0;
+
+    for (int i = 0; i < n; ++i) {
+        int x, y;
+        scanf("%d %d", &x, &y);
+
+        for (int j = 0; j < 10; ++j) {
+            for (int k = 0; k < 10; ++k) {
+                coordinate[x + j][y + k] = 1;
             }
         }
     }
 
-    for (int i = 0; i < 15; ++i) {
-        for (int j = 0; j < 5; ++j) {
-            if(arr[j][i]==0) continue;
-            printf("%c", arr[j][i]);
+    for (int i = 0; i < 100; ++i) {
+        for (int j = 0; j < 100; ++j) {
+            if (coordinate[i][j] == 1) area++;
         }
     }
 
+    printf("%d",area);
     return 0;
 }
