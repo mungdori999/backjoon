@@ -5,18 +5,25 @@ int main(void) {
 
     scanf("%d", &n);
 
-    int start = 1;
-    int end = 1;
+    int right = 0;
     int i = 1;
 
     while (1) {
-        if (n >= start && n <= end) {
-            printf("%d", i);
+        int num = (i * (i + 1)) / 2;
+
+        if (n >= num - i && n <= num) {
+            int diffTop = num - n;
+            int diffBottom = n - (num - i + 1);
+
+            if (right == 1) {
+                printf("%d/%d",i-diffTop , i - diffBottom);
+            } else {
+                printf("%d/%d", i - diffBottom, i - diffTop);
+            }
             break;
         }
-        start = end + 1;
-        end = end + (6 * i);
         i++;
+        right = right == 1 ? 0 : 1;
     }
 
 
