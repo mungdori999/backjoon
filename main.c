@@ -1,31 +1,17 @@
 #include <stdio.h>
+#include <tgmath.h>
 
 int main(void) {
-    int n;
+    int A, B, V;
 
-    scanf("%d", &n);
+    scanf("%d %d %d", &A, &B, &V);
 
-    int right = 0;
-    int i = 1;
+    double days;
+    days = ((double)(V - A) / (double)(A - B)) + 1;
 
-    while (1) {
-        int num = (i * (i + 1)) / 2;
+    int answer;
+    answer = ceil(days);
 
-        if (n >= num - i && n <= num) {
-            int diffTop = num - n;
-            int diffBottom = n - (num - i + 1);
-
-            if (right == 1) {
-                printf("%d/%d",i-diffTop , i - diffBottom);
-            } else {
-                printf("%d/%d", i - diffBottom, i - diffTop);
-            }
-            break;
-        }
-        i++;
-        right = right == 1 ? 0 : 1;
-    }
-
-
+    printf("%d", answer);
     return 0;
 }
