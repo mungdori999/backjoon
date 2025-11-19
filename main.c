@@ -1,24 +1,29 @@
 #include <stdio.h>
 
 int main(void) {
-    int A;
+    int A, B;
+    int prime[10000] = {0,};
     int count = 0;
+    int sum = 0;
+    scanf("%d %d", &A, &B);
 
-    scanf("%d", &A);
-    for (int i = 0; i < A; ++i) {
-        int number = 0;
-
-        scanf("%d", &number);
-
-        if (number == 1) continue;
-
-        int prime = 0;
-        for (int j = 1; j <= number; ++j) {
-            if (number % j == 0) prime++;
+    for (int i = A; i <= B; ++i) {
+        int j;
+        for (j = 2; j < i; ++j) {
+            if (i % j == 0) break;
         }
-        if (prime == 2) count++;
+
+        if (j == i) {
+            prime[count] = i;
+            count++;
+            sum += i;
+        }
     }
-    printf("%d", count);
+
+    if (prime[0] == 0) printf("-1");
+    else {
+        printf("%d\n%d", sum, prime[0]);
+    }
 
     return 0;
 }
