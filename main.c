@@ -1,17 +1,25 @@
 #include <stdio.h>
-#include <tgmath.h>
 
 int main(void) {
-    int A, B, V;
+    int A, B;
 
-    scanf("%d %d %d", &A, &B, &V);
 
-    double days;
-    days = ((double)(V - A) / (double)(A - B)) + 1;
+    while (1) {
+        scanf("%d %d", &A, &B);
 
-    int answer;
-    answer = ceil(days);
+        if (A == 0 && B == 0) {
+            break;
+        }
 
-    printf("%d", answer);
+        if (B % A == 0) {
+            printf("factor\n");
+        }
+        else if(A % B ==0) {
+            printf("multiple\n");
+        } else {
+            printf("neither\n");
+        }
+    }
+
     return 0;
 }
