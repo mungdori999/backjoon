@@ -3,23 +3,23 @@
 int main(void) {
     int A, B;
 
+    scanf("%d %d", &A, &B);
 
-    while (1) {
-        scanf("%d %d", &A, &B);
+    int count = 0;
 
-        if (A == 0 && B == 0) {
-            break;
+    for (int i = 1; i <= A; ++i) {
+        if (A % i == 0) {
+            count++;
+            if (count == B) {
+                printf("%d", i);
+                return 0;
+            }
+
         }
 
-        if (B % A == 0) {
-            printf("factor\n");
-        }
-        else if(A % B ==0) {
-            printf("multiple\n");
-        } else {
-            printf("neither\n");
-        }
     }
+
+    printf("0");
 
     return 0;
 }
