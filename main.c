@@ -1,10 +1,15 @@
 #include <stdio.h>
 
 int main(void) {
-    int A, B;
-    scanf("%d\n%d", &A, &B);
+    int x, y, w, h;
+    scanf("%d %d %d %d", &x, &y, &w, &h);
 
-    printf("%d",A*B);
+    int minX, minY;
+
+    minX = x <= w - x ? x : w - x;
+    minY = y <= h - y ? y : h - y;
+
+    printf("%d", minX >= minY ? minY : minX);
 
     return 0;
 }
