@@ -1,15 +1,25 @@
 #include <stdio.h>
 
 int main(void) {
-    int x, y, w, h;
-    scanf("%d %d %d %d", &x, &y, &w, &h);
+    int x[1001] = {0,};
+    int y[1001] = {0,};
 
-    int minX, minY;
-
-    minX = x <= w - x ? x : w - x;
-    minY = y <= h - y ? y : h - y;
-
-    printf("%d", minX >= minY ? minY : minX);
+    for (int i = 0; i < 3; ++i) {
+        int coorX, coorY;
+        scanf("%d %d", &coorX, &coorY);
+        x[coorX]++;
+        y[coorY]++;
+    }
+    for (int i = 1; i <= 1000; ++i) {
+        if (x[i] == 1) {
+            printf("%d ", i);
+        }
+    }
+    for (int i = 1; i <= 1000; ++i) {
+        if (y[i] == 1) {
+            printf("%d", i);
+        }
+    }
 
     return 0;
 }
