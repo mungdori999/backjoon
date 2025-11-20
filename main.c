@@ -1,22 +1,10 @@
 #include <stdio.h>
 
 int main(void) {
-    int N;
+    int A, B;
+    scanf("%d\n%d", &A, &B);
 
-    scanf("%d", &N);
+    printf("%d",A*B);
 
-    while (N > 1) {
-
-        int num = 2;
-        while (1) {
-            if (N % num == 0) {
-                N /= num;
-                printf("%d\n", num);
-                break;
-            }
-            num++;
-        }
-
-    }
     return 0;
 }
