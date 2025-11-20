@@ -2,25 +2,30 @@
 
 int main(void) {
 
-    int angle[3] = {0,};
-    int sum = 0;
+    while (1) {
+        int a, b, c = 0;
+        scanf("%d %d %d", &a, &b, &c);
 
-    for (int i = 0; i < 3; ++i) {
-        scanf("%d", &angle[i]);
-        sum += angle[i];
-    }
+        if (a == 0) break;
 
-    if (sum == 180) {
-        if (angle[0] == angle[1] && angle[1] == angle[2] && angle[0] == angle[2]) {
-            printf("Equilateral");
-        } else if(angle[0] == angle[1] || angle[1] == angle[2] || angle[0] == angle[2]) {
-            printf("Isosceles");
+        int sum = a + b + c;
+        int max = 0;
+
+        if (a >= b) {
+            if (a >= c) max = a;
+            else max = c;
         } else {
-            printf("Scalene");
+            if (b >= c) max = b;
+            else max = c;
         }
-    } else{
-        printf("Error");
-    }
 
+        if ((sum - max) > max) {
+            if (a == b && b == c && a == c) printf("Equilateral\n");
+            else if(a == b || b == c || a == c) printf("Isosceles\n");
+            else printf("Scalene\n");
+        } else {
+            printf("Invalid\n");
+        }
+    }
     return 0;
 }
