@@ -1,25 +1,26 @@
 #include <stdio.h>
 
 int main(void) {
-    int n;
-    scanf("%d", &n);
-    int maxX = -10000;
-    int minX = 10000;
 
-    int maxY = -10000;
-    int minY = 10000;
+    int angle[3] = {0,};
+    int sum = 0;
 
-    for (int i = 0; i < n; ++i) {
-        int x, y;
-        scanf("%d %d", &x, &y);
-
-        maxX = maxX <= x ? x : maxX;
-        maxY = maxY <= y ? y : maxY;
-
-        minX = minX >= x ? x : minX;
-        minY = minY >= y ? y : minY;
+    for (int i = 0; i < 3; ++i) {
+        scanf("%d", &angle[i]);
+        sum += angle[i];
     }
 
-    printf("%d", (maxX - minX) * (maxY - minY));
+    if (sum == 180) {
+        if (angle[0] == angle[1] && angle[1] == angle[2] && angle[0] == angle[2]) {
+            printf("Equilateral");
+        } else if(angle[0] == angle[1] || angle[1] == angle[2] || angle[0] == angle[2]) {
+            printf("Isosceles");
+        } else {
+            printf("Scalene");
+        }
+    } else{
+        printf("Error");
+    }
+
     return 0;
 }
