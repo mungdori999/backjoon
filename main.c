@@ -2,10 +2,10 @@
 
 int main(void) {
 
-    int n;
-    scanf("%d", &n);
+    long n;
+    scanf("%ld", &n);
 
-    printf("%d\n",n);
-    printf("1");
+    printf("%ld\n",n*n);
+    printf("2");
     return 0;
 }
