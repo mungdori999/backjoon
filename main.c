@@ -1,37 +1,22 @@
 #include <stdio.h>
-#include <tgmath.h>
 
 int main(void) {
 
-    int N;
+    int a, b, c, d, e, f;
+    int x = -999, y = -999;
 
-    scanf("%d", &N);
+    scanf("%d %d %d %d %d %d", &a, &b, &c, &d, &e, &f);
 
-    int constructor = 1;
-    int M;
 
-    while (1) {
-
-        if(constructor>=N) {
-            printf("0");
-            break;
+    for (int i = x; i < 1000; ++i) {
+        for (int j = y; j < 1000; ++j) {
+            if (a * i + b * j == c && d * i + e * j == f) {
+                printf("%d %d", i, j);
+                return 0;
+            }
         }
-        M = constructor;
-
-        int n = constructor;
-
-        while (n > 0) {
-            M += n % 10;
-            n = n / 10;
-        }
-
-        if (N == M) {
-            printf("%d", constructor);
-            break;
-        }
-        constructor++;
-
     }
+
 
     return 0;
 }
