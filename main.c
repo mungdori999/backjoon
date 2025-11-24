@@ -1,31 +1,37 @@
 #include <stdio.h>
+#include <tgmath.h>
 
 int main(void) {
 
-    int n, m;
-    int cards[101];
+    int N;
 
-    scanf("%d %d", &n, &m);
+    scanf("%d", &N);
 
-    for (int i = 0; i < n; ++i) {
-        scanf("%d", &cards[i]);
-    }
+    int constructor = 1;
+    int M;
 
-    int sum = 0;
-    int diff = 100000;
+    while (1) {
 
-    for (int i = 0; i < n - 2; ++i) {
-        for (int j = i + 1; j < n - 1; ++j) {
-            for (int k = j + 1; k < n; ++k) {
-                sum = cards[i] + cards[j] + cards[k];
-                if ((m - sum) >= 0 && diff >= (m - sum)) {
-                    diff = (m - sum);
-                }
-            }
+        if(constructor>=N) {
+            printf("0");
+            break;
         }
-    }
-    printf("%d", (m - diff));
+        M = constructor;
 
+        int n = constructor;
+
+        while (n > 0) {
+            M += n % 10;
+            n = n / 10;
+        }
+
+        if (N == M) {
+            printf("%d", constructor);
+            break;
+        }
+        constructor++;
+
+    }
 
     return 0;
 }
