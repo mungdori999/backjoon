@@ -3,16 +3,18 @@
 
 int main(void) {
 
-    int arr[5] = {0,};
-    int sum = 0;
-    for (int i = 0; i < 5; ++i) {
+    int N, k;
+    int arr[1001];
+
+    scanf("%d %d", &N, &k);
+
+    for (int i = 0; i < N; ++i) {
         scanf("%d", &arr[i]);
-        sum += arr[i];
     }
 
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < 5 - i - 1; ++j) {
-            if (arr[j] > arr[j + 1]) {
+    for (int i = 0; i < N - 1; ++i) {
+        for (int j = 0; j < N - i - 1; ++j) {
+            if (arr[j] < arr[j + 1]) {
                 int temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
@@ -20,7 +22,7 @@ int main(void) {
         }
     }
 
-    printf("%d\n%d", sum / 5, arr[2]);
+    printf("%d", arr[k-1]);
 
     return 0;
 }
